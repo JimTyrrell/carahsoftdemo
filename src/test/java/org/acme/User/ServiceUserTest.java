@@ -62,8 +62,10 @@ and this is our output.
         modelUser.lastName = "Tyrrell";
 
         modelUser.cars.add(new ModelCar("ford", "Escort", "silver"));
+        modelUser.cars.get(0).user = modelUser;
 
         modelUser.cars.add(new ModelCar("GM", "Corvette", "Red"));
+        modelUser.cars.get(1).user = modelUser;
 
         serviceUser.saveUser(modelUser);
 
@@ -71,7 +73,7 @@ and this is our output.
 
         System.err.println("This is a value: " + modelUser.cars.get(0).user);
 
-        assertEquals("test1", modelUser.cars.get(0).user);
+        assertEquals("Jim", modelUser.cars.get(0).user.firstName);
 
         assertNotNull(modelUser.cars.get(0).user);        
     }

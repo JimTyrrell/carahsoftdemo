@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
@@ -34,6 +36,7 @@ public class ModelCar extends PanacheEntityBase{
     @ManyToOne
     @JoinColumn(name = "userID")
     @JsonProperty()
+    @JsonBackReference
     ModelUser user;
 
     public ModelCar() {}

@@ -18,8 +18,5 @@ public class ServiceCar {
     public List<ModelCar> list() {
 
         return ModelCar.listAll();
-    }
-
-    
-    
+    }    
 }

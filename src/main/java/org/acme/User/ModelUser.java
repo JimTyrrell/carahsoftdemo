@@ -1,5 +1,6 @@
 package org.acme.User;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,5 +35,6 @@ public class ModelUser extends PanacheEntityBase{
     
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     @JsonProperty()
+    @JsonManagedReference
     List<ModelCar> cars = new ArrayList<>();
 }
